@@ -1,0 +1,19 @@
+{
+  "name": "gh-actions-playground",
+  "version": "1.0.0",
+  "description": "A collection of GitHub Actions used to educate myself on the possible uses.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleer73/gh-actions-playground.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cleer73/gh-actions-playground/issues"
+  },
+  "homepage": "https://github.com/cleer73/gh-actions-playground#readme"
+}
