@@ -1,1 +1,6 @@
-console.log('I live! I am the index.js file!');
+
+function add(a, b) {
+  return a + b;
+}
+
+exports.add = add;
