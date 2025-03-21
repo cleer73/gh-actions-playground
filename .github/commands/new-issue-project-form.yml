@@ -1,0 +1,87 @@
+---
+trigger: project_form
+title: Project Form
+description: Start a new project.
+surfaces:
+  - issue
+steps:
+  - type: form
+    style: embedded
+    actions:
+      submit: Submit
+    body:
+      - type: textarea
+        attributes:
+          id: description
+          label: Description
+          description: |
+            Answer these questions:
+            - What are all the dependencies, resources, and problems currently associated with this project?
+            - Where can I get more information about the project and the details of it's implementation?
+            - How will we know this project is "done"?
+        validations:
+          required: true
+
+      - type: input
+        attributes:
+          id: targetDate
+          label: Target Date
+          description: When is this "done"? It's OK if this is a guess and changes.
+          placeholder: '1970-01-01'
+        validations:
+          required: true
+
+      - type: dropdown
+        attributes:
+          id: priority
+          label: Priority
+          description: |
+            • Normal/Low - General requests for help, or for issues that are not urgent or high priority
+            • High - Issues that are important but not business-critical
+            • Urgent - Issues that are business-critical and need immediate attention
+          multiple: false
+          options:
+            - Normal/Low
+            - High
+            - Urgent
+        validations:
+          required: true
+
+      - type: dropdown
+        attributes:
+          id: impact
+          label: Impact
+          description: |
+            Estimate of total person-hours saved
+            • Small - minutes per week
+            • Medium - hours per month
+            • Large - days per quarter
+            • Massive - weeks per year
+          multiple: false
+          options:
+            - Small (1)
+            - Medium (2)
+            - Large (3)
+            - Massive (4)
+        validations:
+          required: true
+
+      - type: dropdown
+        attributes:
+          id: effort
+          label: Effort
+          description: |
+            Estimate of effort to implement
+            • Hours
+            • Days
+            • Weeks
+          options:
+            - Hours (1)
+            - Days (5)
+            - Weeks (10)
+        validations:
+          required: true
+
+  - type: fill
+    submit_form: false
+    template_path: .github/commands/new-issue-project-form.liquid
